@@ -56,23 +56,33 @@
         });
 
         //do same for regeisteration form
-    // $('.login-form')
-    //     .on('submit', function (e) {
-    //         e.preventDefault();
-    //         http({
-    //             method: 'post',
-    //             endpoint: '/user',
-    //             data: {
-    //                 username: e.target.uname.value,
-    //                 password: e.target.psw.value
-    //             }
-    //         }).then(function (params) {
-    //             console.log(params);
-    //             if (params.status) {
-    //                 window.location = 'profile.html';
-    //             }
-    //         }).catch(function (e) {
-    //             console.log(e);
-    //         })
-    //     });
+    $('.registration-form')
+        .on('register', function(e){
+            e.preventDefault();
+            localStorage.removeItem('user');
+            http({
+                method: 'get',
+                endpoint: '/user',
+                data: {
+                    firstname: e.target.firstname.value,
+                    lastname: e.target.lastname.value,
+                    phone: e.target.phone.value,
+                    email: e.target.email.value,
+                    plan: e.target.plan.value,
+                    description: e.target.description.value,
+                    username: e.target.uname.value,
+                    password: e.target.psw.value
+                }
+            }).then(function (params) {
+                console.log(params);
+                if (params.status) {
+                    localStorage.setItem('user', JSON.stringify(params.data));
+                    window.location = 'register.html';
+                }
+            }).catch(function (e) {
+                console.log(e);
+            })
+        });
+
+
 })(jQuery || $);

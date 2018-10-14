@@ -31,14 +31,14 @@
 
                 <div class="form-group">
                     <label for="firstname"><span class="req">* </span> First name: </label>
-                    <input class="form-control" placeholder="First Name" type="text" name="First Name" id="txt" onkeyup="Validate(this)"
+                    <input class="form-control" placeholder="First Name" type="text" name="First Name" id="firstname" onkeyup="Validate(this)"
                         required />
                     <div id="errFirst"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="lastname"><span class="req">* </span> Last name: </label>
-                    <input class="form-control" type="text" name="Last Name" id="txt" onkeyup="Validate(this)"
+                    <input class="form-control" type="text" name="Last Name" id="lastname" onkeyup="Validate(this)"
                         placeholder="Last Name" required />
                     <div id="errLast"></div>
                 </div>
@@ -53,14 +53,14 @@
                 <div class="form-group">
                     <label for="username"><span class="req">* </span> User name: <small>This will be your login
                             user name</small> </label>
-                    <input class="form-control" type="text" name="Username" id="txt" onkeyup="Validate(this)"
+                    <input class="form-control" type="text" name="Username" id="username" onkeyup="Validate(this)"
                         placeholder="Minimum 6 letters" required />
                     <div id="errLast"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="password"><span class="req">* </span> Password: </label>
-                    <input required name="password" type="password" placeholder="Password" class="form-control inputpass"
+                    <input required name="password" type="password" placeholder="password" class="form-control inputpass"
                         minlength="4" maxlength="16" id="pass1" /> </p>
 
                     <label for="password"><span class="req">* </span> Password Confirm: </label>
@@ -76,7 +76,7 @@
                 <div class="form-group">
                     <label for="description"><span class="req">* </span> Description:<small> Max 200 characters</small>
                     </label>
-                    <textarea class="form-control text-area" placeholder="Description" required type="text" name="description"
+                    <textarea class="form-control text-area" placeholder="description" required type="text" name="description"
                         id="description" maxlength="200"></textarea>
                 </div>
                 <div class="form-group">
@@ -193,6 +193,8 @@
             }
         }
     </script>
+      <script src="js/index.js"></script>
+      
 </body>
 
 </html>
