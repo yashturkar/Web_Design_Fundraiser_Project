@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Payment</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="icon" type="image/x-icon" href="favicons/diamond-245278/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+
+<body>
+    <div class="my-div">
+        <div class="container-fluid">
+            <div class="outer-div">
+                <h2 class="payment">Payment</h2>
+
+                <ul class="nav navbar-dark nav-pills rounded nav-fill mb-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#nav-tab-card">
+                            <i class="fa fa-credit-card"></i> Credit Card</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
+                            <i class="fab fa-paypal"></i> Paypal</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#nav-tab-bank">
+                            <i class="fa fa-university"></i> Bank Transfer</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="nav-tab-card">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="username">Full name (on the card):</label>
+                                <input type="text" class="form-control" name="username" placeholder="" required="">
+                            </div> <!-- form-group.// -->
+
+                            <div class="form-group">
+                                <label for="cardNumber">Card number:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="cardNumber" placeholder="">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text text-muted">
+                                            <i class="fab fa-cc-visa"></i>   <i class="fab fa-cc-amex"></i>  
+                                            <i class="fab fa-cc-mastercard"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div> <!-- form-group.// -->
+                            <div class="form-group">
+                                <label for="username">Amount:</label>
+                                <input type="text" class="form-control" name="amount" placeholder="" required="">
+                            </div> <!-- form-group.// -->
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <label><span class="hidden-xs">Expiration:</span> </label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" placeholder="MM" name="">
+                                            <input type="number" class="form-control" placeholder="YYYY" name="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV
+                                            <i class="fa fa-question-circle"></i></label>
+                                        <input type="number" class="form-control" required="">
+                                    </div> <!-- form-group.// -->
+                                </div>
+                            </div> <!-- row.// -->
+                            <div class="split-buttons">
+                                <button class="btn btn-primary confirm" type="button"> Confirm </button>
+                                <button class="btn btn-back confirm" type="button"><a href="index.html">Back</a>
+                                </button>
+                            </div>
+                        </form>
+                    </div> <!-- tab-pane.// -->
+                    <div class="tab-pane fade" id="nav-tab-paypal">
+                        <p>Paypal is easiest way to pay online</p>
+                        <p>
+                            <button type="button" class="btn btn-primary"> <i class="fab fa-paypal"></i> Log in my
+                                Paypal </button>
+                        </p>
+                        <p><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-tab-bank">
+                        <p>Bank account details</p>
+                        <dl class="param">
+                            <dt>BANK: </dt>
+                            <dd> THE WORLD BANK</dd>
+                        </dl>
+                        <dl class="param">
+                            <dt>Account number: </dt>
+                            <dd> 12345678912345</dd>
+                        </dl>
+                        <dl class="param">
+                            <dt>ISBN: </dt>
+                            <dd> 123456789</dd>
+                        </dl>
+                        <p><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div> <!-- tab-pane.// -->
+                </div> <!-- tab-content .// -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
