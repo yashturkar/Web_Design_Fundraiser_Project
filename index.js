@@ -66,12 +66,13 @@ PGUSER=vlfwxubgnzeyob \
     app.post('/api/user', (req, res) => {
         // console.log(req.body);
         // res.send(req.body);
-        client.query('INSERT INTO USERS VALUES(\''+ uuid.v4()  +'\',\''+ req.body.firstname +'\')').then(function (dbres){
+        client.query('INSERT INTO USERS(id, firstname, lastname, password, username, email, phone, plan, description)VALUES (\''+uuid+'\',\''+firstname+'\', \''lastname+'\', \''+password+'\', \''+username+'\', \''+email+'\', \''+phone+'\', \''+plan+'\', \''+description+'\'');').then(function (dbres){
             res.send(dbres);
         }).catch(function(e) {
             res.send({});
         })
     });
+
 
    /***
     * GET USERS FROM PG
