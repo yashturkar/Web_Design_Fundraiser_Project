@@ -17,8 +17,9 @@
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
     <!--Navbar-->
-    <div id="id01" class="modal" style="display: block;">
-        <form class="modal-content animate login-form" >
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="profile.html">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Login">&times;</span>
                 <img src="images/img_avatar.png" alt="Avatar" class="avatar">
@@ -39,8 +40,7 @@
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
-                <button type="submit" class="cancelbtn">Cancel</button>
-                <span class="psw"><a href="#">Forgot password?</a></span>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
         </form>
     </div>
@@ -154,6 +154,7 @@
                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
                     </div>
                 </div>
+                <button type="button" class="btn btn-lg btn-primary center-button"><a href="payment.html">Donate Now</a></button>
             </div>
             <div class="card p-3">
                 <img class="card-img-top" src="images/8.jpg" alt="Card image cap">
@@ -167,6 +168,7 @@
                             aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                     </div>
                 </div>
+                <button type="button" class="btn btn-lg btn-primary center-button"><a href="payment.html">Donate Now</a></button>
             </div>
             <div class="card p-3">
                 <img class="card-img-top card-heading" src="images/10.jpg" alt="Card image cap">
@@ -180,6 +182,7 @@
                             aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
                     </div>
                 </div>
+                <button type="button" class="btn btn-lg btn-primary center-button"><a href="payment.html">Donate Now</a></button>
             </div>
         </div>
     </div>
@@ -399,10 +402,8 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
@@ -443,7 +444,6 @@
             });
         })
     </script>
-    <script src="js/index.js"></script>
 </body>
 
 </html>

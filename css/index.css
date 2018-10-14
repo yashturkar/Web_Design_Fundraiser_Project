@@ -358,6 +358,9 @@ width: 100%;
 .card-heading{
     text-align: center;
 }
+.center-button{
+    margin-left: 130px;
+}
 .navbar{
     background-color:#2c2c54;
 }
