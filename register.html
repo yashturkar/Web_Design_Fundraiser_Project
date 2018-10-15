@@ -17,7 +17,7 @@
 <body>
     <div class="container-fluid outer-div">
 
-        <form action="" method="post" id="fileForm" role="form">
+        <form class="registration-form" method="post" id="fileForm" role="form">
             <fieldset>
                 <!-- <legend class="text-center">Valid information is required to register. <span class="req"><small>
                             required *</small></span></legend> -->
@@ -31,14 +31,14 @@
 
                 <div class="form-group">
                     <label for="firstname"><span class="req">* </span> First name: </label>
-                    <input class="form-control" placeholder="First Name" type="text" name="First Name" id="firstname" onkeyup="Validate(this)"
+                    <input class="form-control" placeholder="First Name" type="text" name="firstname" id="firstname" onkeyup="Validate(this)"
                         required />
                     <div id="errFirst"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="lastname"><span class="req">* </span> Last name: </label>
-                    <input class="form-control" type="text" name="Last Name" id="lastname" onkeyup="Validate(this)"
+                    <input class="form-control" type="text" name="lastname" id="lastname" onkeyup="Validate(this)"
                         placeholder="Last Name" required />
                     <div id="errLast"></div>
                 </div>
@@ -53,18 +53,18 @@
                 <div class="form-group">
                     <label for="username"><span class="req">* </span> User name: <small>This will be your login
                             user name</small> </label>
-                    <input class="form-control" type="text" name="Username" id="username" onkeyup="Validate(this)"
+                    <input class="form-control" type="text" name="username" id="username" onkeyup="Validate(this)"
                         placeholder="Minimum 6 letters" required />
                     <div id="errLast"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="password"><span class="req">* </span> Password: </label>
-                    <input required name="password" type="password" placeholder="password" class="form-control inputpass"
+                    <input required name="pass" type="password" placeholder="password" class="form-control inputpass"
                         minlength="4" maxlength="16" id="pass1" /> </p>
 
                     <label for="password"><span class="req">* </span> Password Confirm: </label>
-                    <input required name="password" type="password" class="form-control inputpass" minlength="4"
+                    <input required name="passwordconfirm" type="password" class="form-control inputpass" minlength="4"
                         maxlength="16" placeholder="Enter again to validate" id="pass2" onkeyup="checkPass(); return false;" />
                     <span id="confirmMessage" class="confirmMessage"></span>
                 </div>
@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="split-buttons">
-                    <button class="btn btn-primary" type="button"> Register </button>
+                    <button class="btn btn-primary" type="submit"> Register </button>
                     <button class=" btn btn-back confirm" type="button"> Back </button>
                 </div>
             </fieldset>
@@ -110,7 +110,9 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
