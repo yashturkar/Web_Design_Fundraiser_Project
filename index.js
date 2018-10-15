@@ -63,6 +63,7 @@ PGUSER=vlfwxubgnzeyob \
    /***
     * Inser User to PG TAble
     */
+<<<<<<< HEAD
     app.post('/api/user', async (req, res) => {
 
         const id = uuid.v4();
@@ -103,7 +104,27 @@ PGUSER=vlfwxubgnzeyob \
                 status: false
             });
         }
+=======
+    app.post('/api/user', (req, res) => {
+        // console.log(req.body);
+        // res.send(req.body);
+        const firstname = req.body.firstname;
+        const lastname = req.body.lastname;
+        const email = req.body.email;
+        const password = req.body.password;
+        const username = req.body.username;
+        const phone = req.body.phone;
+        const plan = req.body.plan;
+        const description = req.body.description;
+        
+        client.query('INSERT INTO USERS(id, firstname, lastname, password, username, email, phone, plan, description)VALUES (\''+uuid+'\',\''+firstname+'\', \''lastname+'\', \''+password+'\', \''+username+'\', \''+email+'\', \''+phone+'\', \''+plan+'\', \''+description+'\'');').then(function (dbres){
+            res.send(dbres);
+        }).catch(function(e) {
+            res.send({});
+        })
+>>>>>>> 77071d18841f755f7f70b9d08b36010004afb5ba
     });
+
 
    /***
     * GET USERS FROM PG
