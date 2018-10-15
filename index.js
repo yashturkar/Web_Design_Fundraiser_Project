@@ -63,14 +63,88 @@ PGUSER=vlfwxubgnzeyob \
    /***
     * Inser User to PG TAble
     */
-    app.post('/api/user', (req, res) => {
-        // console.log(req.body);
-        // res.send(req.body);
-        client.query('INSERT INTO USERS VALUES(\''+ uuid.v4()  +'\',\''+ req.body.firstname +'\')').then(function (dbres){
-            res.send(dbres);
+    app.post('/api/user', async (req, res) => {
+
+        const id = uuid.v4();
+        const firstname = req.body.firstname;
+        const lastname = req.body.lastname;
+        const phone = req.body.phone;
+        const email = req.body.email;
+        const plan = req.body.plan;
+        const description = req.body.description;
+        const username = req.body.username;
+        const password = req.body.password;
+
+        const query = `INSERT INTO USERS VALUES('${id}','${firstname}','${lastname}','${password}','${username}','${email}','${phone}','${plan}','${description}')`;
+        const dbResult = await client.query(query);
+        console.log(dbResult);
+        if (dbResult.rowCount == 1) {
+            client.query(`SELECT * FROM USERS WHERE id='${id}'`).then(function (dbres) {
+                if (dbres.rows.length === 1) {
+                    return res.send({
+                        status: true,
+                        data: Object.assign({},
+                            dbres.rows[0], {
+                                password: null
+                            })
+                    });
+                }
+                return res.send({
+                    status: false
+                });
+            }).catch(function (e) {
+                return res.send({
+                    status: false
+                });
+            })
+        }
+        else {
+            res.send({
+                status: false
+            });
+        }
+    });
+    app.get('/api/fundraisers', (req, res) => {
+        client.query('SELECT * FROM FUNDRAISERS').then(function (dbres){
+            res.send(dbres.rows);
         }).catch(function(e) {
-            res.send({});
+            res.send([]);
         })
+   });
+    app.post('/api/fundraisers', async (req, res) => {
+        const username = req.body.username;
+        const title = req.body.title;
+        const amount = req.body.amount;
+        const description = req.body.description;
+
+        const query = `INSERT INTO FUNDRAISERS VALUES('${username}','${title}','${amount}','${description}')`;
+        const dbResult = await client.query(query);
+        console.log(dbResult);
+        if (dbResult.rowCount == 1) {
+            client.query(`SELECT * FROM FUNDRAISERS WHERE username='${username}'`).then(function (dbres) {
+                if (dbres.rows.length === 1) {
+                    return res.send({
+                        status: true,
+                        data: Object.assign({},
+                            dbres.rows[0], {
+                                password: null
+                            })
+                    });
+                }
+                return res.send({
+                    status: false
+                });
+            }).catch(function (e) {
+                return res.send({
+                    status: false
+                });
+            })
+        }
+        else {
+            res.send({
+                status: false
+            });
+        }
     });
 
    /***

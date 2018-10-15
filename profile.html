@@ -36,25 +36,25 @@
                 <img src="images/img_avatar.png" alt="Avatar" class="avatar">
               </div>
               <div class="form-group">
-                <label>First Name:</label>
+                <label>First Name:</label> <b><span data-key="firstname"></span></b>
               </div> <!-- form-group.// -->
               <div class="form-group">
-                <label>Last Name:</label>
+                <label>Last Name:</label><b><span data-key="lastname"></span></b>
               </div> <!-- form-group.// -->
               <div class="form-group">
-                <label>User ID:</label>
+                <label>Username:</label> <b><span data-key="username"></span></b>
               </div> <!-- form-group.// -->
               <div class="form-group">
-                <label>Email Address:</label>
+                <label>Email Address:</label><b><span data-key="email"></span></b>
               </div> <!-- form-group.// -->
               <div class="form-group">
-                <label>Phone number:</label>
+                <label>Phone number:</label><b><span data-key="phone"></span></b>
               </div> <!-- form-group.// -->
               <div class="form-group">
-                <label>Plan:</label>
+                <label>Plan:</label><b><span data-key="plan"></span></b>
               </div> <!-- form-group.// -->
               <div class="form-group">
-                <label>Description:</label>
+                <label>Description:</label><b><span data-key="description"></span></b>
               </div> <!-- form-group.// -->
               <div class="split-buttons">
                 <button class="btn btn-primary confirm" type="button" onclick="document.getElementById('id01').style.display='block'">
@@ -114,23 +114,21 @@
   </div>
   <div id="id01" class="modal">
 
-    <form class="modal-content animate" action="profile.html">
+    <form class="modal-content animate fundraiser-form" action="profile.html">
       <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       </div>
       <h2 class="heading">NEW FUNDRAISER</h2>
       <div class="container">
+        <label for="username"><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
         <label for="title"><b>Title:</b></label>
-        <input type="text" placeholder="Enter Title" name="title" required>
+        <input type="text" placeholder="Enter Title" name="title" id="title" required>
         <label for="amount"><b>Amount:</b></label>
-        <input type="text" placeholder="Enter Amount" name="amount" required>
+        <input type="text" placeholder="Enter Amount" name="amount" id="amount" required>
         <label for="description"><b>Description:</b><small> Max 200 characters</small> </label>
         <textarea class="form-control text-area" placeholder="Description" required type="text" name="description" id="description"
           maxlength="200"></textarea>
-        <div class="form-group">
-          <label class="control-label pp"><b> Title Image:</b></label>
-          <input type="file" class="filestyle" data-icon="false">
-        </div>
         <button class="width-100 btn-primary" type="submit">Submit</button>
         <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -152,15 +150,17 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
   <script>
-    $('#cleardemo').filestyle({
-      buttonText: ' Choose a file from System',
-      buttonName: 'btn-info'
-    });
+    // $('#cleardemo').filestyle({
+    //   buttonText: ' Choose a file from System',
+    //   buttonName: 'btn-info'
+    // });
 
     $('#clear').click(function () {
       $('#cleardemo').filestyle('clear');
     });                   
   </script>
+  <script src="js/index.js"></script>
+  <script>loadProfile()</script>
 </body>
 
 </html>
