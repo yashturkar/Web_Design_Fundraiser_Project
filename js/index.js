@@ -57,27 +57,26 @@
 
         //do same for regeisteration form
     $('.registration-form')
-        .on('register', function(e){
+        .on('submit', function(e){
             e.preventDefault();
             localStorage.removeItem('user');
             http({
-                method: 'get',
+                method: 'POST',
                 endpoint: '/user',
                 data: {
                     firstname: e.target.firstname.value,
                     lastname: e.target.lastname.value,
-                    phone: e.target.phone.value,
+                    phone: e.target.phonenumber.value,
                     email: e.target.email.value,
                     plan: e.target.plan.value,
                     description: e.target.description.value,
-                    username: e.target.uname.value,
-                    password: e.target.psw.value
+                    username: e.target.username.value,
+                    password: e.target.pass.value
                 }
             }).then(function (params) {
-                console.log(params);
                 if (params.status) {
                     localStorage.setItem('user', JSON.stringify(params.data));
-                    window.location = 'register.html';
+                    window.location = window.location.href.replace('register.html', 'profile.html');
                 }
             }).catch(function (e) {
                 console.log(e);

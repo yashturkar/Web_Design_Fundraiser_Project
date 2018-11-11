@@ -63,7 +63,53 @@ PGUSER=vlfwxubgnzeyob \
    /***
     * Inser User to PG TAble
     */
+<<<<<<< HEAD
     /* app.post('/api/user', (req, res) => {
+=======
+<<<<<<< HEAD
+    app.post('/api/user', async (req, res) => {
+
+        const id = uuid.v4();
+        const firstname = req.body.firstname;
+        const lastname = req.body.lastname;
+        const phone = req.body.phone;
+        const email = req.body.email;
+        const plan = req.body.plan;
+        const description = req.body.description;
+        const username = req.body.username;
+        const password = req.body.password;
+
+        const query = `INSERT INTO USERS VALUES('${id}','${firstname}','${lastname}','${password}','${username}','${email}','${phone}','${plan}','${description}')`;
+        const dbResult = await client.query(query);
+        console.log(dbResult);
+        if (dbResult.rowCount == 1) {
+            client.query(`SELECT * FROM USERS WHERE id='${id}'`).then(function (dbres) {
+                if (dbres.rows.length === 1) {
+                    return res.send({
+                        status: true,
+                        data: Object.assign({},
+                            dbres.rows[0], {
+                                password: null
+                            })
+                    });
+                }
+                return res.send({
+                    status: false
+                });
+            }).catch(function (e) {
+                return res.send({
+                    status: false
+                });
+            })
+        }
+        else {
+            res.send({
+                status: false
+            });
+        }
+=======
+    app.post('/api/user', (req, res) => {
+>>>>>>> dcc657226ddf0f2bea2f20774737dbb2d946a55e
         // console.log(req.body);
         // res.send(req.body);
         const firstname = req.body.firstname;
@@ -80,7 +126,12 @@ PGUSER=vlfwxubgnzeyob \
         }).catch(function(e) {
             res.send({});
         })
+<<<<<<< HEAD
     }); */
+=======
+>>>>>>> 77071d18841f755f7f70b9d08b36010004afb5ba
+    });
+>>>>>>> dcc657226ddf0f2bea2f20774737dbb2d946a55e
 
 
    /***
